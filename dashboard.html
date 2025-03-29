@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Baper Bank- Dashboard</title>
+        <link rel="shortcut icon" href="./imges/favicon-16x16.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/custom.css">
+    </head>
+    <body>
+        <div class="d-flex flex-column justify-content-between pt-5">
+            <!-- sidebar -->
+            <div class="sidebar pt-5">
+                <a class="navbar-brand d-flex align-items-center text-decoration-none" href="#">
+                    <img src="./imges/main_logo.png" alt="Baper Bank Logo" width="50" height="50" class="d-inline-block">
+                    <span class="ms-2 text-success fw-bold text-uppercase fs-4">Baper Bank</span>
+                </a>
+                <hr>
+                <ul class="nav flex-column gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">
+                            <i class="fa-solid fa-landmark"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fa-solid fa-circle-user"></i> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar end -->
+
+            <!-- main content -->
+            <div class="main-content px-4">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+                    <div>
+                        <h2 class="fw-bold text-dark">Welcome to the Dashboard of <strong>Baper Bank!</strong></h2>
+                        <p class="text-muted">Here you can manage your account, view details, and more.</p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-success px-4 py-2" data-bs-toggle="modal" data-bs-target="#depositModal">
+                            <i class="fa-solid fa-credit-card"></i> Deposit
+                        </button>
+                        <button class="btn btn-danger px-4 py-2" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+                            <i class="fa-solid fa-wallet"></i> Withdraw
+                        </button>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                        <div class="card-body px-4">
+                            <h5 class="card-title">Account Balance</h5>
+                            <h3 id="accountBalance" class="text-success">0.00</h3>
+                            <p class="card-text">Your current balance as of today.</p>
+                        </div>
+                    </div>
+                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                        <div class="card-body px-4">
+                            <h5 class="card-title">Last Withdrawal</h5>
+                            <h3 id="lastWithdrawal" class="text-danger">0.00</h3>
+                            <p class="card-text">This is your last withdrawal made from the account.</p>
+                        </div>
+                    </div>
+                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                        <div class="card-body px-4">
+                            <h5 class="card-title">Last Deposit</h5>
+                            <h3 id="lastDeposit" class="text-success">0.00</h3>
+                            <p class="card-text">This is the last deposit made to your account.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Transaction History -->
+                <div class="transecction_history w-100 mt-5">
+                    <h3>Transaction History</h3>
+                    <table class="table table-bordered table-striped px-4">
+                        <thead class="table-active">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Balance</th>
+                                <th scope="col">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionHistory">
+                            <!-- Transactions will be dynamically injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Transaction History end -->
+                 
+            </div>
+            <!-- main content end --> 
+        </div> 
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/custom.js"></script>
+    </body>
+</html>
