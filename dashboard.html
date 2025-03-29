@@ -21,17 +21,17 @@
                 <ul class="nav flex-column gap-2">
                     <li class="nav-item">
                         <a class="nav-link active" href="dashboard.html">
-                            <i class="fa-solid fa-landmark"></i> Dashboard
+                            <i class="fa-solid fa-landmark"></i><span>Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profile.html">
-                            <i class="fa-solid fa-circle-user"></i> Profile
+                            <i class="fa-solid fa-circle-user"></i><span> Profile</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
-                            <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                            <i class="fa-solid fa-right-from-bracket"></i><span> Log Out</span>
                         </a>
                     </li>
                 </ul>
@@ -55,21 +55,21 @@
                     </div>
                 </div>
                 <div class="cards">
-                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                    <div class="card shadow-lg" style="height: 200px; width: 100%; cursor: pointer;">
                         <div class="card-body px-4">
                             <h5 class="card-title">Account Balance</h5>
                             <h3 id="accountBalance" class="text-success">0.00</h3>
                             <p class="card-text">Your current balance as of today.</p>
                         </div>
                     </div>
-                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                    <div class="card shadow-lg" style="height: 200px; width: 100%; cursor: pointer;">
                         <div class="card-body px-4">
                             <h5 class="card-title">Last Withdrawal</h5>
                             <h3 id="lastWithdrawal" class="text-danger">0.00</h3>
                             <p class="card-text">This is your last withdrawal made from the account.</p>
                         </div>
                     </div>
-                    <div class="card shadow-md" style="height: 200px; width: 100%; cursor: pointer;">
+                    <div class="card shadow-lg" style="height: 200px; width: 100%; cursor: pointer;">
                         <div class="card-body px-4">
                             <h5 class="card-title">Last Deposit</h5>
                             <h3 id="lastDeposit" class="text-success">0.00</h3>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <!-- Transaction History -->
-                <div class="transecction_history w-100 mt-5">
+                <div class="transecction_history mt-5">
                     <h3>Transaction History</h3>
                     <table class="table table-bordered table-striped px-4">
                         <thead class="table-active">
@@ -97,7 +97,67 @@
                     </table>
                 </div>
                 <!-- Transaction History end -->
-                 
+                
+                <!-- Deposit Modal -->
+                <div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="depositModalLabel">Deposit Funds</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="depositForm">
+                                    <div class="mb-3">
+                                        <label for="depositAmount" class="form-label">Amount to Deposit</label>
+                                        <input type="number" class="form-control" id="depositAmount" placeholder="Enter amount" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="depositDescription" class="form-label">Description (Optional)</label>
+                                        <textarea class="form-control" id="depositDescription" rows="3" placeholder="Enter description"></textarea>
+                                    </div>
+                                    <p id="depositDateTime" class="text-muted">Current Date and Time: </p>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Deposit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Deposit Modal end -->
+
+                <!-- Withdraw Modal -->
+                <div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="withdrawModalLabel">Withdraw Funds</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="withdrawForm">
+                                    <div class="mb-3">
+                                        <label for="withdrawAmount" class="form-label">Amount to Withdraw</label>
+                                        <input type="number" class="form-control" id="withdrawAmount" placeholder="Enter amount">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="withdrawDescription" class="form-label">Description (Optional)</label>
+                                        <textarea class="form-control" id="withdrawDescription" rows="3" placeholder="Enter description"></textarea>
+                                    </div>
+                                     <!-- Display Current Date and Time -->
+                                     <p id="withdrawTimeDate" class="text-muted">Current Date and Time: </p>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" id="withdrawButton">Withdraw</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Withdraw Modal end --> 
             </div>
             <!-- main content end --> 
         </div> 

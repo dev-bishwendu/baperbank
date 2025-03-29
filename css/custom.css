@@ -32,12 +32,13 @@
     top: 0;
     left: 0;
     padding-inline: 2%;
-    background-color: #f7f9fa;
+    background-color: #ebf2f6;
 }
 .main-content{
     margin-left: 20vw;
     width: 80vw;
 }
+
 /* Hover effect for nav-item */
 .nav-item:hover {
     background-color: rgb(10, 116, 84);
@@ -65,10 +66,35 @@
     gap: 20px;
     margin-top: 20px;
 }
+
 /* Responsive */
 @media (max-width: 767px) {
     .cards{
         flex-direction: column;
+    }
+    table tr th,td{
+        font-size: 8px !important;
+    }
+    .nav-item span{
+        display: none !important;
+    }
+    .navbar-brand span{
+        display: none !important;
+    }
+}
+@media (max-width: 991px) {
+    .cards{
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    table tr th,td{
+        font-size: 15px !important;
+    }
+    .navbar-brand{
+        flex-direction: column !important;
+    }
+    .nav-item span{
+        font-size: 15px !important; 
     }
 }
 /* Dashboard Page end*/
