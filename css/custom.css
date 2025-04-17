@@ -5,6 +5,15 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.sidebar{
+    position: fixed;
+    width: 20vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-inline: 2%;
+    background-color: #ebf2f6;
+}
 /* Common Style */
 
 /* Login Page Style */
@@ -15,7 +24,6 @@
     background-position: center;
     min-height: 100vh;
 }
-
 .login-card{
     display: flex;
     justify-content: center;
@@ -25,15 +33,6 @@
 /* Login Page Style end */
 
 /* Dashboard Page */
-.sidebar{
-    position: fixed;
-    width: 20vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    padding-inline: 2%;
-    background-color: #ebf2f6;
-}
 .main-content{
     margin-left: 20vw;
     width: 80vw;
